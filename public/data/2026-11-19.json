@@ -1,51 +1,58 @@
 {
   "date": "2026-11-19",
-  "generatedAt": "2026-11-19T05:14:13.091Z",
+  "generatedAt": "2026-11-19T05:43:44.548Z",
   "topics": [
     {
       "name": "前端",
       "items": [
         {
-          "title": "Building a GPS Speedometer With a Live Route Map (and GPX Export) in the Browser",
-          "link": "https://dev.to/speedidash/building-a-gps-speedometer-with-a-live-route-map-and-gpx-export-in-the-browser-4hgp",
+          "title": "Why \"rm -rf $D*\" Bypasses Almost Every AI Guardrail (And How We Scanned 115k Lines of Production Code)",
+          "link": "https://dev.to/jimil_joshi_4baa0947baff5/why-rm-rf-d-bypasses-almost-every-ai-guardrail-and-how-we-scanned-115k-lines-of-production-28ea",
           "source": "DEV Community",
-          "date": "2026-11-19T05:10:50.000Z",
-          "snippet": "A speed number is useful. A speed number plus a line on a map showing where you've been is far more useful, and it's surprisingly little extra code. Here's how to add a live route, a follow mode that "
+          "date": "2026-11-19T05:38:22.000Z",
+          "snippet": "Look at this bash command for a moment:\nD=/; rm -rf $D*\n\nIf you feed that string into almost any commercial AI safety filter, prompt guardrail, or regex-based security rule, it reports:\n[Guardrail Sta"
         },
         {
-          "title": "Contract Review Retrieval Explained: Node.js Fallbacks for Cited Change Alerts",
-          "link": "https://dev.to/lyrap22/contract-review-retrieval-explained-nodejs-fallbacks-for-cited-change-alerts-3n8d",
+          "title": "GPT-6.2 Astra Aces Every Benchmark. Devs Hate It.",
+          "link": "https://dev.to/max_quimby/gpt-62-astra-aces-every-benchmark-devs-hate-it-35if",
           "source": "DEV Community",
-          "date": "2026-11-19T05:10:40.000Z",
-          "snippet": "A legal contract review workspace should fail toward a smaller, cited answer, not a confident guess: keep a lexical search path, a vector path, and a human-review state, then expose which path produce"
+          "date": "2026-11-19T05:35:49.000Z",
+          "snippet": "OpenAI shipped GPT-6.2 Astra and Sol on November 17, 2026, and within 24 hours the AI community split cleanly in two. On one side: the benchmarks. Astra became the first model in history to hit 100% o"
         },
         {
-          "title": "🔍 Choosing the right web scraping API can save hours of development time. This guide compares 6 popular tools, their strengths, limitations, and use cases to help you find the right fit. 🚀💻",
-          "link": "https://dev.to/elsie-rainee/choosing-the-right-web-scraping-api-can-save-hours-of-development-time-this-guide-compares-6-4cla",
+          "title": "Robot Learning and AI — Ch.01: Machine Learning Fundamentals [EN]",
+          "link": "https://dev.to/richard_minsoogo/robot-learning-and-ai-ch01-machine-learning-fundamentals-en-50dd",
           "source": "DEV Community",
-          "date": "2026-11-19T05:10:34.000Z",
-          "snippet": "I Tested 6 Best Web Scraping APIs So You Don't Waste Your Time\n\n\n  \nDev Stack Hub\n                    \n                  \n\n                \n for The Startup Café\n            \n          \nNov 18\n       "
+          "date": "2026-11-19T05:32:14.000Z",
+          "snippet": "STATERA Library · Series 08 · Volume 19 · Chapter 01 · EN\nhttps://github.com/Statera-Library/08_Vol_19_Robot_Learning_and_AI/blob/main/19_01_Machine_Learning_Fundamentals/19_01_Machine_Learning_Fundam"
         },
         {
-          "title": "A Guide to Missing Feature Flags and Fallback Defaults for Gaming Imports",
-          "link": "https://dev.to/milohastings5316/a-guide-to-missing-feature-flags-and-fallback-defaults-for-gaming-imports-5136",
+          "title": "Agentes LLM: idempotencia para email de prueba",
+          "link": "https://dev.to/silviutech/agentes-llm-idempotencia-para-email-de-prueba-9j2",
           "source": "DEV Community",
-          "date": "2026-11-19T05:10:06.000Z",
-          "snippet": "A gaming import monitoring bill is made of repeated checks, retained evidence, and attribution work; missing feature flags need explicit fallback defaults so a deleted key doesn't turn those checks in"
+          "date": "2026-11-19T05:32:10.000Z",
+          "snippet": "Un agente LLM puede redactar un plan de pruebas muy bueno y aun así dejar un sistema frágil. El problema aparece cuando una misma instrucción se reintenta: crea dos buzones, consume dos códigos de ver"
         },
         {
-          "title": "When Everything Has Changed, What Do We Do Next?",
-          "link": "https://css-tricks.com/when-everything-has-changed/",
-          "source": "CSS-Tricks",
-          "date": "2026-11-18T14:55:21.000Z",
-          "snippet": "It’s been a… year, huh? I think the most common emoji I’ve seen this year is “Face with Bags Under Eyes” (🫩) and that says a lot. One thing is for sure: the industry we make a living in is …\nWhen Eve"
+          "title": "Robot Learning and AI — Ch.02: Deep Learning for Robotics [EN]",
+          "link": "https://dev.to/richard_minsoogo/robot-learning-and-ai-ch02-deep-learning-for-robotics-en-4fpg",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:32:05.000Z",
+          "snippet": "STATERA Library · Series 08 · Volume 19 · Chapter 02 · EN\nhttps://github.com/Statera-Library/08_Vol_19_Robot_Learning_and_AI/blob/main/19_02_Deep_Learning_for_Robotics/19_02_Deep_Learning_for_Robotics"
         },
         {
-          "title": "Staggering Scroll-Driven Animations with animation-range-start",
-          "link": "https://css-tricks.com/staggering-scroll-driven-animations-with-animation-range-start/",
-          "source": "CSS-Tricks",
-          "date": "2026-11-16T16:47:05.000Z",
-          "snippet": "Imagine a CSS karaoke machine that displays a ball bouncing on text that incrementally highlights, based on progress through via speech recognition and running that kind of animation as a single predi"
+          "title": "Robot Learning and AI — Ch.03: Self Supervised Learning [EN]",
+          "link": "https://dev.to/richard_minsoogo/robot-learning-and-ai-ch03-self-supervised-learning-en-20bj",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:31:57.000Z",
+          "snippet": "STATERA Library · Series 08 · Volume 19 · Chapter 03 · EN\nhttps://github.com/Statera-Library/08_Vol_19_Robot_Learning_and_AI/blob/main/19_03_Self_Supervised_Learning/19_03_Self_Supervised_Learning_EN."
+        },
+        {
+          "title": "Robot Learning and AI — Ch.05: Reinforcement Learning [EN]",
+          "link": "https://dev.to/richard_minsoogo/robot-learning-and-ai-ch05-reinforcement-learning-en-3mi7",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:31:38.000Z",
+          "snippet": "STATERA Library · Series 08 · Volume 19 · Chapter 05 · EN\nhttps://github.com/Statera-Library/08_Vol_19_Robot_Learning_and_AI/blob/main/19_05_Reinforcement_Learning/19_05_Reinforcement_Learning_EN.md\nV"
         }
       ]
     },
@@ -53,11 +60,18 @@
       "name": "后端",
       "items": [
         {
-          "title": "Your AI Agent Has API Access. But Should It Have Permission?",
-          "link": "https://dev.to/mudraid_73800235ea/your-ai-agent-has-api-access-but-should-it-have-permission-3g1k",
+          "title": "Airfoil noise: one model saw the test condition at other frequencies, one did not",
+          "link": "https://dev.to/widechaos/airfoil-noise-one-model-saw-the-test-condition-at-other-frequencies-one-did-not-599c",
           "source": "DEV Community",
-          "date": "2026-11-19T05:10:59.000Z",
-          "snippet": "AI agents are becoming more capable.\nThey can call APIs, retrieve information, execute workflows, and interact with multiple services without constant human supervision.\nFor developers, this opens up "
+          "date": "2026-11-19T05:40:20.000Z",
+          "snippet": "The study sits on the 1,503-row Airfoil Self-Noise set from Brooks, Pope, and Marcolini (1989), hosted on UCI as dataset 291 (DOI 10.24432/C5VW2C). It has five inputs: frequency in Hz, attack angle in"
+        },
+        {
+          "title": "Robot Learning and AI — Ch.08: Lifelong Learning [EN]",
+          "link": "https://dev.to/richard_minsoogo/robot-learning-and-ai-ch08-lifelong-learning-en-2gbj",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:31:13.000Z",
+          "snippet": "STATERA Library · Series 08 · Volume 19 · Chapter 08 · EN\nhttps://github.com/Statera-Library/08_Vol_19_Robot_Learning_and_AI/blob/main/19_08_Lifelong_Learning/19_08_Lifelong_Learning_EN.md\nVolume 19 R"
         }
       ]
     },
