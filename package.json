@@ -1,0 +1,12 @@
+{
+  "name": "daily-learning-digest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "每日学习资料聚合：RSS 抓取 + 关键词过滤 + 可选 AI 摘要，GitHub Actions 定时运行",
+  "scripts": {
+    "fetch": "node scripts/fetch.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}

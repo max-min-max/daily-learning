@@ -1,0 +1,32 @@
+{
+  "topics": [
+    {
+      "name": "前端",
+      "keywords": ["vue", "react", "typescript", "vite", "javascript", "css", "node", "frontend", "前端", "浏览器", "工程化"],
+      "feeds": [
+        "https://css-tricks.com/feed/",
+        "https://dev.to/feed",
+        "https://www.ruanyifeng.com/blog/atom.xml"
+      ],
+      "maxItems": 15
+    },
+    {
+      "name": "后端",
+      "keywords": ["java", "spring", "mysql", "redis", "kafka", "docker", "kubernetes", "microservice", "architecture", "后端", "数据库", "架构"],
+      "feeds": [
+        "https://hnrss.org/frontpage",
+        "https://dev.to/feed"
+      ],
+      "maxItems": 15
+    },
+    {
+      "name": "综合",
+      "keywords": ["ai", "llm", "productivity", "learning", "工具", "效率", "学习", "开源"],
+      "feeds": [
+        "https://www.ruanyifeng.com/blog/atom.xml",
+        "https://sspai.com/feed"
+      ],
+      "maxItems": 10
+    }
+  ]
+}

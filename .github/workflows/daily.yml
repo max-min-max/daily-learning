@@ -1,0 +1,36 @@
+name: 每日抓取学习资料
+
+on:
+  schedule:
+    # UTC 1:00 = 北京时间 9:00，可自行调整
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - run: node scripts/fetch.js
+        env:
+          AI_API_URL: ${{ secrets.AI_API_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+
+      - name: 提交并推送数据
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          git diff --cached --quiet || git commit -m "chore(data): 更新 $(date -u +%F) 学习资料"
+          git push

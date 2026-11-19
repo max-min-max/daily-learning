@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>每日学习资料</title>
+  <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
+  <style>
+    :root {
+      --primary: #409eff;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #303133;
+      --text-secondary: #909399;
+      --border: #e4e7ed;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header h1 { font-size: 18px; }
+    .header .meta { font-size: 13px; color: var(--text-secondary); }
+    select, .topic-tabs button {
+      font-size: 14px;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .topic-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tabs button.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .container { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+    .status { text-align: center; color: var(--text-secondary); padding: 60px 0; }
+    .status.error { color: #f56c6c; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+    .card a.title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .card a.title:hover { color: var(--primary); }
+    .card .summary { margin-top: 8px; font-size: 14px; line-height: 1.6; color: #606266; }
+    .card .info { margin-top: 10px; font-size: 12px; color: var(--text-secondary); display: flex; gap: 12px; flex-wrap: wrap; }
+    .empty-tip { text-align: center; color: var(--text-secondary); padding: 40px 0; font-size: 14px; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1a1d21; --card: #24282d; --text: #dcdfe6; --text-secondary: #8a8f99; --border: #3a3f45; }
+      .card .summary { color: #a5abb5; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div>
+        <h1>每日学习资料</h1>
+        <div class="meta" v-if="digest">数据日期：{{ digest.date }} · 生成于 {{ formatTime(digest.generatedAt) }}</div>
+      </div>
+      <select v-if="digest && digest.dates && digest.dates.length" v-model="selectedDate">
+        <option v-for="d in digest.dates" :key="d" :value="d">{{ d }}</option>
+      </select>
+    </header>
+
+    <div class="container">
+      <div class="topic-tabs" v-if="topics.length">
+        <button
+          v-for="(t, i) in topics"
+          :key="t.name"
+          :class="{ active: i === activeTopic }"
+          @click="activeTopic = i"
+        >
+          {{ t.name }}（{{ t.items.length }}）
+        </button>
+      </div>
+
+      <div v-if="loading" class="status">加载中…</div>
+      <div v-else-if="error" class="status error">{{ error }}</div>
+      <template v-else-if="currentTopic">
+        <div class="card" v-for="item in currentTopic.items" :key="item.link">
+          <a class="title" :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          <div class="summary" v-if="item.summary || item.snippet">{{ item.summary || item.snippet }}</div>
+          <div class="info">
+            <span>{{ item.source }}</span>
+            <span v-if="item.date">{{ formatDate(item.date) }}</span>
+          </div>
+        </div>
+        <div class="empty-tip" v-if="!currentTopic.items.length">该主题今天没有匹配到新资料</div>
+      </template>
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        digest: null,
+        loading: true,
+        error: '',
+        activeTopic: 0,
+        selectedDate: ''
+      },
+      computed: {
+        topics() {
+          return (this.digest && this.digest.topics) || [];
+        },
+        currentTopic() {
+          return this.topics[this.activeTopic] || null;
+        }
+      },
+      watch: {
+        selectedDate(val) {
+          if (val && (!this.digest || val !== this.digest.date)) this.load(val);
+        }
+      },
+      created() {
+        this.load();
+      },
+      methods: {
+        async load(date) {
+          this.loading = !this.digest;
+          this.error = '';
+          try {
+            const url = date ? 'data/' + date + '.json' : 'data/latest.json';
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(date ? '该日期的数据不存在（超过保留期）' : '数据加载失败（' + res.status + '）');
+            const data = await res.json();
+            this.digest = data;
+            this.selectedDate = data.date;
+            this.activeTopic = 0;
+          } catch (e) {
+            this.error = e.message + '，请确认已运行过抓取任务';
+          } finally {
+            this.loading = false;
+          }
+        },
+        formatDate(s) {
+          return s ? s.slice(0, 10) : '';
+        },
+        formatTime(s) {
+          if (!s) return '';
+          const d = new Date(s);
+          const p = (n) => String(n).padStart(2, '0');
+          return p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+        }
+      }
+    });
+  </script>
+</body>
+</html>

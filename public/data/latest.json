@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-19",
+  "generatedAt": "2026-11-19T05:14:13.091Z",
+  "topics": [
+    {
+      "name": "前端",
+      "items": [
+        {
+          "title": "Building a GPS Speedometer With a Live Route Map (and GPX Export) in the Browser",
+          "link": "https://dev.to/speedidash/building-a-gps-speedometer-with-a-live-route-map-and-gpx-export-in-the-browser-4hgp",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:10:50.000Z",
+          "snippet": "A speed number is useful. A speed number plus a line on a map showing where you've been is far more useful, and it's surprisingly little extra code. Here's how to add a live route, a follow mode that "
+        },
+        {
+          "title": "Contract Review Retrieval Explained: Node.js Fallbacks for Cited Change Alerts",
+          "link": "https://dev.to/lyrap22/contract-review-retrieval-explained-nodejs-fallbacks-for-cited-change-alerts-3n8d",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:10:40.000Z",
+          "snippet": "A legal contract review workspace should fail toward a smaller, cited answer, not a confident guess: keep a lexical search path, a vector path, and a human-review state, then expose which path produce"
+        },
+        {
+          "title": "🔍 Choosing the right web scraping API can save hours of development time. This guide compares 6 popular tools, their strengths, limitations, and use cases to help you find the right fit. 🚀💻",
+          "link": "https://dev.to/elsie-rainee/choosing-the-right-web-scraping-api-can-save-hours-of-development-time-this-guide-compares-6-4cla",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:10:34.000Z",
+          "snippet": "I Tested 6 Best Web Scraping APIs So You Don't Waste Your Time\n\n\n  \nDev Stack Hub\n                    \n                  \n\n                \n for The Startup Café\n            \n          \nNov 18\n       "
+        },
+        {
+          "title": "A Guide to Missing Feature Flags and Fallback Defaults for Gaming Imports",
+          "link": "https://dev.to/milohastings5316/a-guide-to-missing-feature-flags-and-fallback-defaults-for-gaming-imports-5136",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:10:06.000Z",
+          "snippet": "A gaming import monitoring bill is made of repeated checks, retained evidence, and attribution work; missing feature flags need explicit fallback defaults so a deleted key doesn't turn those checks in"
+        },
+        {
+          "title": "When Everything Has Changed, What Do We Do Next?",
+          "link": "https://css-tricks.com/when-everything-has-changed/",
+          "source": "CSS-Tricks",
+          "date": "2026-11-18T14:55:21.000Z",
+          "snippet": "It’s been a… year, huh? I think the most common emoji I’ve seen this year is “Face with Bags Under Eyes” (🫩) and that says a lot. One thing is for sure: the industry we make a living in is …\nWhen Eve"
+        },
+        {
+          "title": "Staggering Scroll-Driven Animations with animation-range-start",
+          "link": "https://css-tricks.com/staggering-scroll-driven-animations-with-animation-range-start/",
+          "source": "CSS-Tricks",
+          "date": "2026-11-16T16:47:05.000Z",
+          "snippet": "Imagine a CSS karaoke machine that displays a ball bouncing on text that incrementally highlights, based on progress through via speech recognition and running that kind of animation as a single predi"
+        }
+      ]
+    },
+    {
+      "name": "后端",
+      "items": [
+        {
+          "title": "Your AI Agent Has API Access. But Should It Have Permission?",
+          "link": "https://dev.to/mudraid_73800235ea/your-ai-agent-has-api-access-but-should-it-have-permission-3g1k",
+          "source": "DEV Community",
+          "date": "2026-11-19T05:10:59.000Z",
+          "snippet": "AI agents are becoming more capable.\nThey can call APIs, retrieve information, execute workflows, and interact with multiple services without constant human supervision.\nFor developers, this opens up "
+        }
+      ]
+    },
+    {
+      "name": "综合",
+      "items": []
+    }
+  ],
+  "dates": [
+    "2026-11-19"
+  ]
+}
